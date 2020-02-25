@@ -1,6 +1,6 @@
 ﻿
 $DisplayTextInContextMenu = "Run as Administrator"
-
+New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR
 $hkcrPath = "HKCR:\Microsoft.PowerShellScript.1\Shell\$DisplayTextInContextMenu\Command"
 
 if((Test-Path $hkcrPath) -eq $false) {
